@@ -10,6 +10,8 @@ prefix ?= /usr/local
 libdir ?= $(prefix)/lib
 includedir ?= $(prefix)/include
 
+USE_UMP = 1
+
 ifeq ($(USE_UMP),1)
 SRC += cedrus_mem_ump.c
 CFLAGS += -DUSE_UMP

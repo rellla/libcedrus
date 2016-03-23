@@ -23,12 +23,18 @@
 #include <stddef.h>
 #include <stdint.h>
 #include "kernel-headers/cedardev_api.h"
+#ifdef USE_UMP
+#include <ump/ump.h>
+#endif
 
 struct cedrus_mem
 {
 	void *virt;
 	uint32_t phys;
 	size_t size;
+#ifdef USE_UMP
+	ump_handle id;
+#endif
 };
 
 struct cedrus_allocator

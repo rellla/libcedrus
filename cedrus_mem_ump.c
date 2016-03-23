@@ -55,6 +55,8 @@ static struct cedrus_mem *cedrus_allocator_ump_mem_alloc(struct cedrus_allocator
 	if (!mem->pub.phys)
 		goto err_release;
 
+	mem->pub.id = mem->handle;
+
 	return &mem->pub;
 
 err_release:

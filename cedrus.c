@@ -191,6 +191,16 @@ EXPORT uint32_t cedrus_mem_get_phys_addr(const struct cedrus_mem *mem)
 	return mem->phys;
 }
 
+#ifdef USE_UMP
+EXPORT void *cedrus_mem_get_ump_handle(const struct cedrus_mem *mem)
+{
+	if (!mem)
+		return 0x0;
+
+	return mem->id;
+}
+#endif
+
 uint32_t phys2bus(uint32_t phys)
 {
 	if (ve.version == 0x1639)
